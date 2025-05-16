@@ -1,3 +1,13 @@
+# 모든 파일 무시
 *
+
+# 폴더는 무시하지 않음
 !*/
+
+# .js 파일은 추적
 !*.js
+!**/*.js
+
+# 특정 .js 파일은 무시
+dhodlfjgrprnlcksgrpgo.js
+dhodlfjgrprnlcksgrpgo_v2.0.js
