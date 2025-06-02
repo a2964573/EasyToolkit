@@ -11,7 +11,7 @@ function main(data)
     var [rowArr, rlen] = [[], 0];
     var [colArr, clen] = [[], 0];
 
-    // ê³„ì¢Œë²ˆí˜¸ ì‹¤ê³„ì¢Œë²ˆí˜¸ ê±°ë˜ì†Œ ì¢…ëª©ì½”ë“œ ì¢…ëª©ëª… ìˆ˜ëŸ‰ í˜„ì¬ê°€ í‰ê°€ê¸ˆ
+    // °èÁÂ¹øÈ£ ½Ç°èÁÂ¹øÈ£ °Å·¡¼Ò Á¾¸ñÄÚµå Á¾¸ñ¸í ¼ö·® ÇöÀç°¡ Æò°¡±İ
     rowArr = data.split('\n').filter(row => row.length);
     rlen = rowArr.length;
 
@@ -19,7 +19,7 @@ function main(data)
     clen = colArr.length;
 
     // header
-    var result = [["ê¸°ì¤€ë…„","ê¸°ì¤€ì›”","ê¸°ì¤€ì¼","êµ­ê°€","ê±°ë˜ì†Œ","êµ¬ë¶„","ì¦ê¶Œì‚¬","ì¢…ëª©ì½”ë“œ","ì¢…ëª©ëª…","ì¢…ëª©ìƒíƒœ","ê³„ì¢Œìˆ˜","ë³´ìœ ìˆ˜ëŸ‰","ë³´ìœ ê¸ˆì•¡"]];
+    var result = [["±âÁØ³â","±âÁØ¿ù","±âÁØÀÏ","±¹°¡","°Å·¡¼Ò","±¸ºĞ","Áõ±Ç»ç","Á¾¸ñÄÚµå","Á¾¸ñ¸í","Á¾¸ñ»óÅÂ","°èÁÂ¼ö","º¸À¯¼ö·®","º¸À¯±İ¾×"]];
     var i, col, rtn, contry, exchange, short_cd, std_name, pos_qty, close;
     for(i = 1; i < clen; i++) {
         col = colArr[i];
@@ -34,17 +34,17 @@ function main(data)
             // push
             switch(col[2]) {
                 case "KRXC":
-                    contry = "í•œêµ­";
+                    contry = "ÇÑ±¹";
                     break;
                 case "XNAS":
                 case "XNYS":
                 case "XAMX":
-                    contry = "ë¯¸êµ­";
+                    contry = "¹Ì±¹";
                 break;
                 default:
                     continue;
             }
-            result.push([year, month, day, contry, exchange, "", "KBì¦ê¶Œ", short_cd, std_name, "", 1, pos_qty, (pos_qty * close)]);
+            result.push([year, month, day, contry, exchange, "", "KBÁõ±Ç", short_cd, std_name, "", 1, pos_qty, (pos_qty * close)]);
             continue;
         }
 
